@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.bg-primary, .btn-primary {
+  background-color: #71D7AA !important;
+}
+.bg-secondary, .btn-secondary-se {
+  background-color: #FFF500 !important;
+}
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #71D7AA;
+  --bs-btn-border-color: #71D7AA;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #66C69C; /* Optionnel: ajustez si besoin pour une couleur de survol */
+  --bs-btn-hover-border-color: #66C69C; /* Optionnel: ajustez si besoin pour une couleur de survol */
+  --bs-btn-focus-shadow-rgb: 113, 215, 170; /* Ajusté pour correspondre au vert */
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #5BB38E; /* Optionnel: ajustez si besoin pour une couleur active */
+  --bs-btn-active-border-color: #5BB38E; /* Optionnel: ajustez si besoin pour une couleur active */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #71D7AA;
+  --bs-btn-disabled-border-color: #71D7AA;
+}
+
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFF500;
+  --bs-btn-border-color: #FFF500;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #E5E500; /* Optionnel: ajustez si besoin pour une couleur de survol */
+  --bs-btn-hover-border-color: #E5E500; /* Optionnel: ajustez si besoin pour une couleur de survol */
+  --bs-btn-focus-shadow-rgb: 255, 245, 0; /* Ajusté pour correspondre au jaune */
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #CCCC00; /* Optionnel: ajustez si besoin pour une couleur active */
+  --bs-btn-active-border-color: #CCCC00; /* Optionnel: ajustez si besoin pour une couleur active */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #FFF500;
+  --bs-btn-disabled-border-color: #FFF500;
+}
+
+/*change color primary angular materail */
+.primary {
+  color: #000000 !important;
+  background: #71D7AA !important;
+}
+.secondary {
+  color: #000000 !important;
+  background: #FFF500 !important;
+}
+.text-primary {
+  color: #71D7AA !important;
+}
+.text-secondary {
+  color: #FFF500 !important;
+}
+

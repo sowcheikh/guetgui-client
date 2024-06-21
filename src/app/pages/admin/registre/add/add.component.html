@@ -1,0 +1,70 @@
+<div mat-dialog-title>
+  <h1>Ajouter un produit</h1>
+</div>
+<form [formGroup]="formAdd" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="rowfield">
+      <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" formControlName="nom" required>
+        <mat-error *ngIf="formAdd.get('nom')?.hasError('required') && formAdd.get('nom')?.touched">Le nom est obligatoire</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sexe</mat-label>
+        <mat-select formControlName="sexe" required>
+          <mat-option value="male">Mâle</mat-option>
+          <mat-option value="femelle">Femelle</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formAdd.get('sexe')?.hasError('required') && formAdd.get('sexe')?.touched">Le sexe est obligatoire</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="rowfield">
+      <mat-form-field appearance="outline">
+        <mat-label>Date de naissance</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateNaissance" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="formAdd.get('dateNaissance')?.hasError('required') && formAdd.get('dateNaissance')?.touched">La date de naissance est obligatoire</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Race</mat-label>
+        <mat-select formControlName="race_id">
+          <mat-option *ngFor="let r of races" [value]="r._id">{{r.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="rowfield">
+      <mat-form-field appearance="outline">
+        <mat-label>Geniteur</mat-label>
+        <input matInput type="text" formControlName="nomPere" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Genitrice</mat-label>
+        <input matInput type="text" formControlName="nomMere" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Poids</mat-label>
+        <input matInput type="number" formControlName="poids">
+      </mat-form-field>
+
+      <div class="custom-file-field mb-5">
+        <label for="file">Photo</label>
+        <input type="file" id="file" class="custom-file-input" (change)="getFileNames($event)">
+      </div>
+      <div *ngIf="fileName">{{ fileName }}</div> <!-- Display the file name -->
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" class="secondary" [mat-dialog-close]="false">Annuler</button>
+    <button mat-raised-button class="primary" type="submit">Enregistrer</button>
+  </div>
+</form>

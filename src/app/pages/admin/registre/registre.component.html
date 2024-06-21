@@ -1,0 +1,31 @@
+<app-topbar></app-topbar>
+<!-- List of cards with image, title, and description -->
+<div class="container">
+  <!-- Ajouter produit -->
+  <div class="d-flex justify-content-between">
+    <h4 class="text-dark">Liste des produits</h4>
+    <button type="button" class="btn btn-sm mb-2 btn-primary" (click)="openDialog()">
+      <i class="fal fa-plus"></i>
+      Ajouter un produit
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let item of registres">
+      <div class="card">
+        <img [src]="['assets/img/mouton.jpeg']" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-dark text-uppercase fw-bold">{{ item.nom }}</h5>
+          <div class="d-flex justify-content-between">
+            <p class="card-text text-muted">Géniteur: {{ item.nomPere}}</p>
+            <p class="card-text text-muted">Génitrice: {{ item.nomMere}}</p>
+          </div>
+          <small class="card-text">Poids: <span class="badge bg-danger">{{ item.poids}} KG</span> </small>
+         <div class="text-end">
+           <button class="btn btn-primary" (click)="openDetailDialog(item)">Voir plus</button>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

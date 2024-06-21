@@ -1,0 +1,17 @@
+<div mat-dialog-title>
+  <h1>Choisir un mâle</h1>
+</div>
+<div mat-dialog-content>
+<mat-form-field appearance="fill">
+  <mat-label>Choisissez un mâle</mat-label>
+  <mat-select [(value)]="selectedMale">
+    <mat-option *ngFor="let male of males" [value]="male">
+      {{ male.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<div mat-dialog-actions class="justify-content-end">
+  <button mat-button class="secondary" (click)="onCancel()">Annuler</button>
+  <button mat-raised-button class="primary" (click)="onConfirm()">Confirmer</button>
+</div>

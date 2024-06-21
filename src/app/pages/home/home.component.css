@@ -1,0 +1,30 @@
+.quarter-circle {
+  height: 600px;
+  padding-bottom: 50%;
+  background-color: #71D7AA;
+  border-bottom-left-radius: 100%;
+}
+.text-container {
+  margin-top: 5rem;
+  position: relative;
+  z-index: 1;
+}
+.contact-info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.contact-info p {
+  margin-bottom: 0;
+}
+.button-container {
+  position: relative;
+  z-index: 1;
+}
+.custom-btn {
+  background-color: #71D7AA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}

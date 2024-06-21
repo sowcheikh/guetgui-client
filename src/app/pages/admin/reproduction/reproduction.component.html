@@ -1,0 +1,46 @@
+<app-topbar></app-topbar>
+<!--
+<div class="search-container">
+  <input type="text" placeholder="Rechercher" [(ngModel)]="searchText">
+  <button (click)="search()">
+    <i class="fa fa-search"></i>
+  </button>
+</div>-->
+
+<div class="container h-100">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let item of animals">
+      <div class="card">
+        <img [src]="['assets/img/mouton1.jpeg']" class="card-img-top" alt="{{ item.nom }}">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title">{{ item.nom }}</h5>
+            <p class="card-text">{{getAge(item.dateNaissance)}}</p>
+          </div>
+          <p class="card-subtitle">{{ getRaceName(item.race_id) }}</p>
+          <div class="d-flex justify-content-between">
+            <button *ngIf="item.reproduction === Reproduction.ATTENTE" class="btn btn-primary cursor-pointer" (click)="openDialog(item.reproduction)">Accoupler</button>
+            <button *ngIf="item.reproduction !== Reproduction.ATTENTE" class="btn btn-primary cursor-pointer" (click)="openDialog(item.reproduction)">{{item.reproduction}}</button>
+            <span class="badge p-2" [ngClass]="getBadgeClass(item.reproduction)">{{ item.reproduction }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+    </li>
+    <li class="page-item" *ngFor="let page of totalPages" [class.active]="page === currentPage">
+      <a class="page-link" (click)="changePage(page)">{{ page }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+      <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<app-footer></app-footer>

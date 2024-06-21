@@ -1,0 +1,65 @@
+<!-- image left  and formulaire right side-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 bg-primary">
+            <img src="assets/img/login.svg" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-md-6">
+          <a class="text-dark text-decoration-none" [routerLink]="['/']">
+            <i class="fa-solid fa-arrow-left"></i> Retour
+          </a>
+         <div class="py-5">
+           <h1 class="h2 text-center text-primary">Se connecter</h1>
+            <p class="text-muted text-center">Connectez-vous à votre compte pour continuer.</p>
+           <form id="formAuthentication" class="mb-3 px-5 py-5" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+             <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+               <div class="input-group input-group-merge">
+                 <input
+                   type="email"
+                   class="form-control"
+                   id="email"
+                   formControlName="email"
+                   minlength="9"
+                   placeholder="Entrer votre email"
+                 />
+               </div>
+             </div>
+             <div class="mb-3 form-password-toggle">
+               <div class="d-flex justify-content-between">
+                 <label class="form-label" for="password">Mot de passe</label>
+                 <a class="text-dark" [routerLink]="['/auth-forgot-password']">
+                   <small>Mot de passe oublié?</small>
+                 </a>
+               </div>
+               <div class="input-group input-group-merge">
+                 <input
+                   [type]="showPassword ? 'text' : 'password'"
+                   id="password"
+                   class="form-control"
+                   formControlName="password"
+                   placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                   aria-describedby="password"
+                 />
+                 <span class="input-group-text cursor-pointer text-secondary bg-primary" (click)="togglePasswordVisibility()">
+    <i [class]="showPassword ? 'fa-solid fa-lock-open' : 'fa-solid fa-lock'"></i>
+  </span>
+               </div>
+
+             </div>
+             <div class="mb-3">
+               <div class="form-check">
+                 <input class="form-check-input" type="checkbox" id="remember-me" />
+                 <label class="form-check-label" for="remember-me"> Se souvenir de moi </label>
+               </div>
+             </div>
+             <div class="mb-3">
+               <button  class="btn btn-primary d-grid w-100" [ngClass]="{'btn-progress': submitted}" type="submit">Se connecter</button>
+             </div>
+           </form>
+            <div class="text-center">
+              <p class="text-muted cursor-pointer">Vous n'avez pas de compte? <a class="text-secondary" [routerLink]="['/auth-register']">S'inscrire</a></p>
+         </div>
+        </div>
+    </div>
+</div>
