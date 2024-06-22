@@ -1,6 +1,8 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import {Component, EventEmitter, HostListener, Output} from '@angular/core';
 import {navbarData} from "./nav-data";
+import {AuthService} from "../../../core/services/auth.service";
+import {Router} from "@angular/router";
 
 interface SideNavToggle {
   screenWidth: number;
@@ -51,6 +53,8 @@ export class SidenavComponent {
       this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
   }
+  constructor(private authService: AuthService, private route: Router) {
+  }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
@@ -64,5 +68,10 @@ export class SidenavComponent {
   closeSidenav(): void {
     this.collapsed = false;
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
+
+  logout() {
+    this.authService.logout();
+    this.route.navigate(['/login']);
   }
 }

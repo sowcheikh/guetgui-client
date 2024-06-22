@@ -19,4 +19,13 @@
       </a>
     </li>
   </ul>
+<!--  se deconnecter-->
+  <div class="sidenav-nav-item logout">
+    <a class="sidenav-nav-link" (click)="logout()">
+      <i class="sidenav-link-icon fas fa-sign-out-alt"></i>
+      <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+        Se déconnecter
+      </span>
+    </a>
+  </div>
 </div>

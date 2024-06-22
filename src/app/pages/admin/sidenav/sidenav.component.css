@@ -108,3 +108,28 @@
     color: #000;
   }
 }
+.logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.938rem;
+  background-color: #fff;
+  border-top: 0.063rem solid #F1F2F7;
+  color: #737B8B;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: #F1F2F7;
+  }
+}
+.sidenav-link-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #5BB38E;
+  text-decoration: none;
+}
+.sidenav-link-icon {
+  color: #5BB38E;
+}

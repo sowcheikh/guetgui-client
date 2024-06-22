@@ -106,8 +106,4 @@ export class RegistreComponent implements OnInit{
   private getProduitList() {
     console.log('test')
   }
-
-  onSubmit() {
-
-  }
 }

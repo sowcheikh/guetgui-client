@@ -6,6 +6,7 @@ import {UserService} from "../../../../core/services/user.service";
 import {Race} from "../../../../core/models/race";
 import {User} from "../../../../core/models/user";
 import {AuthService} from "../../../../core/services/auth.service";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-add',
@@ -18,6 +19,7 @@ export class AddComponent implements OnInit{
   currentUser: User = {} as User;
   fileName: string | null = null;
   constructor(private raceService: RaceService, private animalService: AnimalService, private authService: AuthService,
+              private dialog: MatDialog, private userService: UserService
               ) {
   }
   ngOnInit() {
@@ -84,6 +86,8 @@ export class AddComponent implements OnInit{
       this.animalService.register(formData).subscribe(
         (res: any) => {
           console.log(res);
+          // close the dialog
+          this.dialog.closeAll();
         },
         (error: any) => {
           console.error('Error:', error);

@@ -1,3 +1,33 @@
 <div class="body" [ngClass]="getBodyClass()">
   <router-outlet></router-outlet>
+  <app-topbar></app-topbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title text-center">Mise Bas</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <canvas id="canvas">{{chart}}</canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title text-center">Statistiques</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <canvas id="canvas1">{{chart}}</canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+

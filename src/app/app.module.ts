@@ -12,9 +12,7 @@ import {AdminModule} from "./pages/admin/admin.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {httpInterceptor} from "./core/interceptor/http.interceptor";
 import {ErrorInterceptor} from "./core/interceptor/error.interceptor";
-import {DateAdapter} from "@angular/material/core";
 import {JwtInterceptor} from "./core/interceptor/jwt.interceptor";
 
 @NgModule({

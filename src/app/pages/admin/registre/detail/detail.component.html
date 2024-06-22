@@ -1,15 +1,13 @@
 <div mat-dialog-title>
-  <h1>{{ data.photo }}</h1>
+  <h1>{{ data.nom }}</h1>
 </div>
 <div mat-dialog-content>
   <img [src]="['assets/img/mouton.jpeg']" alt="{{ data.nom }}" class="img-fluid rounded mb-3">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <div class="d-flex">
-      <p class="mx-3"><strong>Sexe :</strong> {{ data.sexe }}</p>
-      <p class="mx-3"><strong>Geniteur :</strong> {{ data.nomPere }}</p>
-      <p class="mx-3"><strong>Genitrice :</strong> {{ data.nomMere }}</p>
-      <p class="mx-3"><strong>Poids :</strong> {{ data.poids }}</p>
-    </div>
+  <div class="d-flex justify-content-between mb-3 gap-3">
+      <p class="mx-3 text-muted fw-bold">Sexe: <span class="text-info">{{ data.sexe }}</span></p>
+      <p class="mx-3 text-muted fw-bold">Geniteur: <span>{{ data.nomPere }}</span></p>
+      <p class="mx-3 text-muted fw-bold">Genitrice: <span>{{ data.nomMere }}</span></p>
+      <p class="mx-3 text-muted fw-bold">Poids: <span class="text-warning">{{ data.poids }} KG</span></p>
     <div class="d-flex align-items-center">
       <span class="badge badge-primary">{{ data.race_id }}</span>
     </div>
